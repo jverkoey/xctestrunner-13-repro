@@ -48,12 +48,12 @@ http_archive(
 ###############################################
 # Broken version google/xctestrunner @ 0.2.10
 
-http_file(
-    name = "xctestrunner",
-    executable = 1,
-    urls = ["https://github.com/google/xctestrunner/releases/download/0.2.10/ios_test_runner.par"],
-    sha256 = "9e46d5782a9dc7d40bc93c99377c091886c180b8c4ffb9f79a19a58e234cdb09",
-)
+# http_file(
+#     name = "xctestrunner",
+#     executable = 1,
+#     urls = ["https://github.com/google/xctestrunner/releases/download/0.2.10/ios_test_runner.par"],
+#     sha256 = "9e46d5782a9dc7d40bc93c99377c091886c180b8c4ffb9f79a19a58e234cdb09",
+# )
 
 # Running
 #
@@ -92,12 +92,12 @@ http_file(
 ###############################################
 # Working version jverkoey/xctestrunner @ 0.2.11
 
-# http_file(
-#     name = "xctestrunner",
-#     executable = 1,
-#     urls = ["https://github.com/jverkoey/xctestrunner/releases/download/0.2.11/ios_test_runner.par"],
-#     sha256 = "153fd48fe3b2f5905edaf6248118fed5fb5daef60b21df0f1ea83e11cbc8a6c4",
-# )
+http_file(
+    name = "xctestrunner",
+    executable = 1,
+    urls = ["https://github.com/jverkoey/xctestrunner/releases/download/0.2.11/ios_test_runner.par"],
+    sha256 = "153fd48fe3b2f5905edaf6248118fed5fb5daef60b21df0f1ea83e11cbc8a6c4",
+)
 
 load(
     "@build_bazel_rules_apple//apple:repositories.bzl",
