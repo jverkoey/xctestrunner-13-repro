@@ -1,0 +1,9 @@
+# Common flags for all builds
+build --verbose_failures
+
+# Platform-specific flags
+build --apple_platform_type=ios
+
+# Swift-specific features: https://github.com/bazelbuild/rules_swift/blob/master/swift/internal/features.bzl
+build --features=swift.enable_batch_mode
+build --features=swift.use_global_module_cache
