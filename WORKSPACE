@@ -102,7 +102,7 @@ http_archive(
 http_file(
     name = "xctestrunner",
     executable = 1,
-    urls = ["file:///Users/featherless/workbench/xctestrunner/bazel-bin/ios_test_runner.par"],
+    urls = ["https://github.com/jverkoey/xctestrunner/releases/download/0.2.11/ios_test_runner.par"],
     sha256 = "a0a8be06b14f787f6017474b1ed33068c616b5b1154cf16e2e7ac3e7f047fd8c",
 )
 
