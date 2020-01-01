@@ -1,4 +1,4 @@
-load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test_suite")
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test_suite", "ios_ui_test_suite")
 load("@build_bazel_rules_apple//apple/testing/default_runner:ios_test_runner.bzl", "ios_test_runner")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
@@ -32,6 +32,14 @@ swift_library(
     deps = [":Library"],
 )
 
+swift_library(
+    name = "UITestsSwiftLib",
+    srcs = glob([
+        "tests/ui/*.swift",
+    ]),
+    deps = [":Library"],
+)
+
 ios_test_runner(
     name = "IPHONE_7_PLUS_IN_10_3",
     device_type = "iPhone 7 Plus",
@@ -56,7 +64,22 @@ ios_unit_test_suite(
       ":UnitTestsSwiftLib"
     ],
     minimum_os_version = "10.0",
-    timeout = "short",
+    timeout = "moderate",
+    runners = [
+        ":IPHONE_7_PLUS_IN_10_3",
+        ":IPHONE_X_IN_11_4",
+        ":IPHONE_XS_MAX_IN_12_2",
+    ],
+)
+
+ios_ui_test_suite(
+    name = "UITests",
+    deps = [
+      ":UITestsSwiftLib"
+    ],
+    test_host = "@bazel_test_host_apple//test_host",
+    minimum_os_version = "10.0",
+    timeout = "moderate",
     runners = [
         ":IPHONE_7_PLUS_IN_10_3",
         ":IPHONE_X_IN_11_4",

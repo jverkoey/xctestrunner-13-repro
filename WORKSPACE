@@ -22,6 +22,13 @@ git_repository(
     shallow_since = "1570831694 -0700",  # Recommended by bazel.
 )
 
+git_repository(
+    name = "bazel_test_host_apple",
+    remote = "https://github.com/jverkoey/bazel-test-host-apple.git",
+    commit = "e8b4b9a5f07d04ba551aaf6752c1cfdf1335275d",
+    shallow_since = "1577652257 -0500",  # Recommended by bazel.
+)
+        
 # This override of the zlib package resolves the following error:
 # "no such package '@zlib//': The repository '@zlib' could not be resolved"
 # Additional context available at: https://github.com/bazelbuild/bazel/issues/10270
@@ -95,8 +102,8 @@ http_archive(
 http_file(
     name = "xctestrunner",
     executable = 1,
-    urls = ["https://github.com/jverkoey/xctestrunner/releases/download/0.2.11/ios_test_runner.par"],
-    sha256 = "153fd48fe3b2f5905edaf6248118fed5fb5daef60b21df0f1ea83e11cbc8a6c4",
+    urls = ["file:///Users/featherless/workbench/xctestrunner/bazel-bin/ios_test_runner.par"],
+    sha256 = "a0a8be06b14f787f6017474b1ed33068c616b5b1154cf16e2e7ac3e7f047fd8c",
 )
 
 load(
