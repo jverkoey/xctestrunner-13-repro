@@ -15,9 +15,7 @@ objc_library(
         "src/*.h",
     ]),
     sdk_frameworks = [
-        "UIKit",
-        "CoreGraphics",
-        "CoreImage",
+        "Foundation",
     ],
     enable_modules = 1,
     module_name = "Library",

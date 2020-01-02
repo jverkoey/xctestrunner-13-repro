@@ -1,4 +1,5 @@
 #import "Library.h"
 
-@implementation Library
-@end
+void SomeFunction(NSArray *choices) {
+
+}
